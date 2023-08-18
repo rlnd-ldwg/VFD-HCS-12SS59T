@@ -32,7 +32,7 @@ quick and simple schematics, driver and example
 ### AC Filament Supply
 ![ac filament supply schematics](images/s_ac_filament_supply.png)
 
-- activate Vdisp  
+- activate Vdisp  https://electronics.stackexchange.com/questions/230044/help-driving-a-vfd-display
   in VFD.h set `SUPPLYMODE 0`
 - extended filament endurance  
   (-> google filament notching)
@@ -63,4 +63,5 @@ http://www.lapis-semi.com/en/data/datasheet-file_db/display/FEDL9289-01.pdf
 https://www.pollin.de/productdownloads/D121466D.PDF  
 https://www.noritake-elec.com/technology/general-technical-information/vfd-operation  
 http://www.kerrywong.com/2013/06/05/vfd-filament-driver-using-555/  
-https://threeneurons.wordpress.com/vfd-stuff/  
+https://threeneurons.wordpress.com/vfd-stuff/
+https://electronics.stackexchange.com/questions/230044/help-driving-a-vfd-display
