@@ -1,0 +1,153 @@
+
+(session "VFD-Driverboard.ses"
+  (base_design "VFD-Driverboard.dsn")
+  (placement
+    (resolution um 10)
+    (component Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical
+      (place J2 750316 -352948 front 270)
+    )
+    (component "MyLib:VFD HCS-12SS59T"
+      (place V1 133056 -139988 front 0)
+    )
+  )
+  (was_is
+  )
+  (routes 
+    (resolution um 10)
+    (parser
+      (host_cad "KiCad's Pcbnew")
+      (host_version 7.0.9)
+    )
+    (library_out 
+      (padstack "Via[0-1]_800:400_um"
+        (shape
+          (circle F.Cu 8000 0 0)
+        )
+        (shape
+          (circle B.Cu 8000 0 0)
+        )
+        (attach off)
+      )
+    )
+    (network_out 
+      (net VCC
+        (wire
+          (path B.Cu 10000
+            724916 -352948
+            724916 -351165
+            741633 -334448
+            818707 -334448
+            994056 -159099
+            994056 -157988
+          )
+        )
+      )
+      (net GNDD
+        (wire
+          (path B.Cu 10000
+            954056 -157988
+            954056 -158930
+            840895 -272091
+            754973 -272091
+            674116 -352948
+          )
+        )
+      )
+      (net VF1
+        (wire
+          (path B.Cu 10000
+            1054056 -157988
+            859096 -352948
+            750316 -352948
+          )
+        )
+        (wire
+          (path B.Cu 10000
+            1054056 -157988
+            1074056 -157988
+          )
+        )
+      )
+      (net VF2
+        (wire
+          (path B.Cu 10000
+            214056 -157988
+            409016 -352948
+            521716 -352948
+          )
+        )
+        (wire
+          (path B.Cu 10000
+            194056 -157988
+            214056 -157988
+          )
+        )
+      )
+      (net VEE
+        (wire
+          (path B.Cu 10000
+            699516 -352948
+            732934 -319530
+            813259 -319530
+            974056 -158733
+            974056 -157988
+          )
+        )
+      )
+      (net "Net-(J1-Pin_4)"
+        (wire
+          (path B.Cu 10000
+            934056 -157988
+            934056 -158719
+            835823 -256952
+            744711 -256952
+            744711 -256953
+            648716 -352948
+          )
+        )
+      )
+      (net "Net-(J1-Pin_5)"
+        (wire
+          (path B.Cu 10000
+            623316 -352948
+            770879 -205385
+            867648 -205385
+            914056 -158977
+            914056 -157988
+          )
+        )
+      )
+      (net "Net-(J1-Pin_6)"
+        (wire
+          (path B.Cu 10000
+            894056 -157988
+            894056 -158908
+            859582 -193382
+            757482 -193382
+            597916 -352948
+          )
+        )
+      )
+      (net "Net-(J1-Pin_7)"
+        (wire
+          (path B.Cu 10000
+            874056 -157988
+            874056 -158838
+            856488 -176406
+            749058 -176406
+            572516 -352948
+          )
+        )
+      )
+      (net "Net-(J1-Pin_8)"
+        (wire
+          (path B.Cu 10000
+            854056 -157988
+            742076 -157988
+            547116 -352948
+          )
+        )
+      )
+    )
+  )
+)

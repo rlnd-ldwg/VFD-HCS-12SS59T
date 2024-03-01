@@ -1,0 +1,165 @@
+(pcb "/Users/roland/Projects/VFD-HCS-12SS59T/KiCad/VFD-Driverboard.dsn"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "7.0.9")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  113448 -38429.4  13348.4 -38429.4  13348.4 -13329.4  113448 -13329.4
+            113448 -38429.4)
+    )
+    (via "Via[0-1]_800:400_um")
+    (rule
+      (width 1000)
+      (clearance 200.1)
+      (clearance 200.1 (type default_smd))
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical
+      (place J2 75031.600000 -35294.807000 front -90.000000 (PN Breadboard))
+    )
+    (component "MyLib:VFD HCS-12SS59T"
+      (place V1 13305.600000 -13998.800000 front 0.000000 (PN ~))
+    )
+  )
+  (library
+    (image Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical
+      (outline (path signal 120  -1330 -24190  1330 -24190))
+      (outline (path signal 120  -1330 -1270  1330 -1270))
+      (outline (path signal 120  -1330 1330  0 1330))
+      (outline (path signal 120  -1330 -1270  -1330 -24190))
+      (outline (path signal 120  1330 -1270  1330 -24190))
+      (outline (path signal 120  -1330 0  -1330 1330))
+      (outline (path signal 50  -1800 1800  -1800 -24650))
+      (outline (path signal 50  1800 1800  -1800 1800))
+      (outline (path signal 50  1800 -24650  1800 1800))
+      (outline (path signal 50  -1800 -24650  1800 -24650))
+      (outline (path signal 100  -1270 -24130  -1270 635))
+      (outline (path signal 100  1270 1270  1270 -24130))
+      (outline (path signal 100  -635 1270  1270 1270))
+      (outline (path signal 100  -1270 635  -635 1270))
+      (outline (path signal 100  1270 -24130  -1270 -24130))
+      (pin Rect[A]Pad_1700x1700_um 1 0 0)
+      (pin Oval[A]Pad_1700x1700_um 2 0 -2540)
+      (pin Oval[A]Pad_1700x1700_um 3 0 -5080)
+      (pin Oval[A]Pad_1700x1700_um 4 0 -7620)
+      (pin Oval[A]Pad_1700x1700_um 5 0 -10160)
+      (pin Oval[A]Pad_1700x1700_um 6 0 -12700)
+      (pin Oval[A]Pad_1700x1700_um 7 0 -15240)
+      (pin Oval[A]Pad_1700x1700_um 8 0 -17780)
+      (pin Oval[A]Pad_1700x1700_um 9 0 -20320)
+      (pin Oval[A]Pad_1700x1700_um 10 0 -22860)
+    )
+    (image "MyLib:VFD HCS-12SS59T"
+      (outline (path signal 100  14100 -5800  88100 -5800))
+      (outline (path signal 100  14100 -14800  14100 -5800))
+      (outline (path signal 100  88100 -5800  88100 -14800))
+      (outline (path signal 100  88100 -14800  14100 -14800))
+      (outline (path signal 50  100 200  100100 200))
+      (outline (path signal 50  100 -20300  100 200))
+      (outline (path signal 50  100100 200  100100 -20300))
+      (outline (path signal 50  100100 -20300  100 -20300))
+      (pin Round[A]Pad_1524_um 1 94100 -1800)
+      (pin Round[A]Pad_1524_um 2 92100 -1800)
+      (pin Round[A]Pad_1524_um 4 88100 -1800)
+      (pin Round[A]Pad_1524_um 5 86100 -1800)
+      (pin Round[A]Pad_1524_um 6 84100 -1800)
+      (pin Round[A]Pad_1524_um 7 82100 -1800)
+      (pin Round[A]Pad_1524_um 8 80100 -1800)
+      (pin Round[A]Pad_1524_um 9 78100 -1800)
+      (pin Round[A]Pad_1524_um 10 76100 -1800)
+      (pin Round[A]Pad_1524_um 11 74100 -1800)
+      (pin Round[A]Pad_1524_um 12 72100 -1800)
+      (pin Round[A]Pad_1524_um 39 18100 -1800)
+      (pin Round[A]Pad_1524_um 40 16100 -1800)
+      (pin Round[A]Pad_1524_um 41 14100 -1800)
+      (pin Round[A]Pad_1524_um 44 8100 -1800)
+      (pin Round[A]Pad_1524_um 45 6100 -1800)
+    )
+    (padstack Round[A]Pad_1524_um
+      (shape (circle F.Cu 1524))
+      (shape (circle B.Cu 1524))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_1700x1700_um
+      (shape (path F.Cu 1700  0 0  0 0))
+      (shape (path B.Cu 1700  0 0  0 0))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_1700x1700_um
+      (shape (rect F.Cu -850 -850 850 850))
+      (shape (rect B.Cu -850 -850 850 850))
+      (attach off)
+    )
+    (padstack "Via[0-1]_800:400_um"
+      (shape (circle F.Cu 800))
+      (shape (circle B.Cu 800))
+      (attach off)
+    )
+  )
+  (network
+    (net VCC
+      (pins J2-2 V1-5)
+    )
+    (net GNDD
+      (pins J2-4 V1-7)
+    )
+    (net VF1
+      (pins J2-1 V1-1 V1-2)
+    )
+    (net VF2
+      (pins J2-10 V1-44 V1-45)
+    )
+    (net VEE
+      (pins J2-3 V1-6)
+    )
+    (net "Net-(J1-Pin_4)"
+      (pins J2-5 V1-8)
+    )
+    (net "Net-(J1-Pin_5)"
+      (pins J2-6 V1-9)
+    )
+    (net "Net-(J1-Pin_6)"
+      (pins J2-7 V1-10)
+    )
+    (net "Net-(J1-Pin_7)"
+      (pins J2-8 V1-11)
+    )
+    (net "Net-(J1-Pin_8)"
+      (pins J2-9 V1-12)
+    )
+    (class kicad_default "" GNDD "Net-(D1-K)" "Net-(D2-A)" "Net-(J1-Pin_4)"
+      "Net-(J1-Pin_5)" "Net-(J1-Pin_6)" "Net-(J1-Pin_7)" "Net-(J1-Pin_8)"
+      "Net-(U1-DC)" "Net-(U1-Ipk)" "Net-(U1-TC)" "Net-(U1-Vfb)" "Net-(U2-+IN)"
+      "Net-(U2--IN)" "Net-(U2-BYPASS)" "Net-(U2-V01)" "Net-(U2-V02)" VCC VEE
+      VF1 VF2 "unconnected-(J1-Pin_2-Pad2)"
+      (circuit
+        (use_via Via[0-1]_800:400_um)
+      )
+      (rule
+        (width 1000)
+        (clearance 200.1)
+      )
+    )
+  )
+  (wiring
+  )
+)
