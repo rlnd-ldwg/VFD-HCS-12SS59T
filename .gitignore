@@ -28,6 +28,7 @@ Makefile
 # LibreOffice
 # *.ods
 .~lock*
+
 # KiCAD
 KiCad/*-backups/
 *bak
@@ -35,3 +36,4 @@ KiCad/*-backups/
 *-cache.lib
 sym-lib-table
 *-rescue.*
+
