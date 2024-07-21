@@ -37,3 +37,6 @@ KiCad/*-backups/
 sym-lib-table
 *-rescue.*
 
+/FW/build/
+/FW/dist/
+/FW/.generated_files/
