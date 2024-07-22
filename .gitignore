@@ -37,6 +37,7 @@ KiCad/*-backups/
 sym-lib-table
 *-rescue.*
 
+# MPLAB
 /FW/build/
 /FW/dist/
-/FW/.generated_files/
+#/FW/.generated_files/
