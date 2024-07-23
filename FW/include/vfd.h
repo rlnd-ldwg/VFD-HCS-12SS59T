@@ -15,7 +15,7 @@ extern "C" {
 // VFD Definitions
 #define VFD_DDR		DDRB
 #define VFD_PORT	PORTB
-#define VFD_RESET   PORTB1
+#define VFD_RESET   PORTB0
     
 #define DCRAM_WR			0x10		// ccccaaaa dddddddd dddddddd ..
 #define CGRAM_WR			0x20		// "
@@ -33,3 +33,4 @@ extern "C" {
 #ifdef  __cplusplus
 }
 #endif
+

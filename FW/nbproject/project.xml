@@ -9,8 +9,8 @@
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>/Users/roland/Projects/VFD-HCS-12SS59T/FW/include</sourceRootElem>
-                <sourceRootElem>/Users/roland/Projects/VFD-HCS-12SS59T/FW/src</sourceRootElem>
+                <sourceRootElem>/home/roland/Projects/VFD-HCS-12SS59T/FW/include</sourceRootElem>
+                <sourceRootElem>/home/roland/Projects/VFD-HCS-12SS59T/FW/src</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

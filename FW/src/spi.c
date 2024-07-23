@@ -13,10 +13,10 @@ void SPI_Init()
 	// make sure the MISO pin is input
 	SPI_DDR &= ~( 1 << MISO );
     SPI_SS_H();      // disable slave
-            
+    SPCR = ( 1 << MSTR );          
     // SPCR : SPIE SPE DORD MSTR CPOL CPHA SPR1 SPR0 SPCR, InitialValue 0xb00000000
 	// set up the SPI module: SPI enabled, LSB first, master mode, clock polarity and phase = 0, F_osc/16
-	SPCR = ( 1 << SPE ) | ( 1 << DORD ) | ( 1 << MSTR ) | ( 1 << SPR0 );
+	SPCR |= ( 1 << SPE ) | ( 1 << DORD ) | ( 1 << MSTR ) | ( 1 << SPR0 );
 	// SPSR = 1;     // set double SPI speed for F_osc/2 -> 2 MHz
 }
 
@@ -27,7 +27,7 @@ uint8_t SPI_Send( uint8_t data )
 	SPDR = data;
 
 	// Wait for the transmission to complete
-//	spi_wait();
+    spi_wait();
 
 	// return the byte received from the slave
 	return SPDR;
@@ -41,7 +41,7 @@ uint8_t SPI_Read( void )
 	SPDR = 0xFF;
 
 	// Wait for the transmission to complete
-//	spi_wait();
+    spi_wait();
 
 	// return the byte received from the slave
 	return SPDR;

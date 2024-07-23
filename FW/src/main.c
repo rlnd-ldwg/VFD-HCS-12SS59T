@@ -19,14 +19,14 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
-*/
-
-#define F_CPU 16000000
+ */
+#define F_CPU 12000000
 
 #include <avr/io.h>
 #include <util/delay.h>
-
 #include "../include/spi.h"
+#include "../include/vfd.h"
+
 
 /*
     Main application
@@ -35,18 +35,40 @@
 int main(void)
 {
     /* Initializes MCU, drivers and middleware */
-    SPI_Init();
-    SPI_SS_L();
-    SPI_Send(0x55);
-    _delay_ms(1);
-    _delay_us(500);
-    SPI_SS_H();
-        
+VFD_Init();
+            VFD_DDR |= (1 << VFD_RESET) | (1 << 1);
+            VFD_PORT |= (1 << PORTB1);
+                   _delay_ms(500);
+                           
+        VFD_PORT &= ~(1 << PORTB1);
+        _delay_ms(500);
+        VFD_PORT |= (1 << PORTB1);
+        _delay_ms(500);
+                
+        VFD_PORT &= ~(1 << PORTB1);
+        _delay_ms(500);
+        VFD_PORT |= (1 << PORTB1);
+        _delay_ms(500);
+                
+        VFD_PORT &= ~(1 << PORTB1);
+        _delay_ms(500);
+        VFD_PORT |= (1 << PORTB1);
+        _delay_ms(500);
+                
+        VFD_PORT &= ~(1 << PORTB1);
+        _delay_ms(500);
+        VFD_PORT |= (1 << PORTB1);
+        _delay_ms(500);
+            
+VFD_display("Das ist Test");
+
     while (1){
-        SPI_SS_L();
-        SPI_Send(0x55);
-        SPI_Send(0xaa);
-        SPI_SS_H();
+        
+        VFD_PORT &= ~(1 << PORTB1);
+        _delay_ms(500);
+        VFD_PORT |= (1 << PORTB1);
+        _delay_ms(500);
+
     }
 }
 /**
