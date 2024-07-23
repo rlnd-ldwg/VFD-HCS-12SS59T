@@ -12,6 +12,7 @@ extern "C" {
 #ifndef SPI_H
 #define SPI_H
 
+#include <avr/io.h>
 #include <inttypes.h>
 
 // SPI Definitions
@@ -40,16 +41,16 @@ extern "C" {
 void SPI_Init();
 
 // Transfer a byte of data
-uint8_t SPI_SendByte( uint8_t data );
+uint8_t SPI_Send( uint8_t data );
 
 // Read a byte of data
-uint8_t SPI_ReadByte( void );
+uint8_t SPI_Read( void );
 
 // Assert the SS line
-void SPI_AssertSS( void );
+void SPI_SS_L( void );
 
 // Deassert the SS line
-void SPI_DeassertSS( void );
+void SPI_SS_H( void );
 
 #endif	/* SPI_H */
 

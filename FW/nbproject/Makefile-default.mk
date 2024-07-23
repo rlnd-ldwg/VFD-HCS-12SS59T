@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=/Users/roland/Projects/VFD-HCS-12SS59T/FW/src/main.c /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c
+SOURCEFILES_QUOTED_IF_SPACED=/Users/roland/Projects/VFD-HCS-12SS59T/FW/src/main.c /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/vfd.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1799924136/main.o ${OBJECTDIR}/_ext/1799924136/spi.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1799924136/main.o.d ${OBJECTDIR}/_ext/1799924136/spi.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1799924136/main.o ${OBJECTDIR}/_ext/1799924136/spi.o ${OBJECTDIR}/_ext/1799924136/vfd.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1799924136/main.o.d ${OBJECTDIR}/_ext/1799924136/spi.o.d ${OBJECTDIR}/_ext/1799924136/vfd.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1799924136/main.o ${OBJECTDIR}/_ext/1799924136/spi.o
+OBJECTFILES=${OBJECTDIR}/_ext/1799924136/main.o ${OBJECTDIR}/_ext/1799924136/spi.o ${OBJECTDIR}/_ext/1799924136/vfd.o
 
 # Source Files
-SOURCEFILES=/Users/roland/Projects/VFD-HCS-12SS59T/FW/src/main.c /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c
+SOURCEFILES=/Users/roland/Projects/VFD-HCS-12SS59T/FW/src/main.c /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/vfd.c
 
 # Pack Options 
 PACK_COMPILER_OPTIONS=-I "${DFP_DIR}/include"
@@ -116,6 +116,12 @@ ${OBJECTDIR}/_ext/1799924136/spi.o: /Users/roland/Projects/VFD-HCS-12SS59T/FW/sr
 	@${RM} ${OBJECTDIR}/_ext/1799924136/spi.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1799924136/spi.o.d" -MT "${OBJECTDIR}/_ext/1799924136/spi.o.d" -MT ${OBJECTDIR}/_ext/1799924136/spi.o  -o ${OBJECTDIR}/_ext/1799924136/spi.o /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/_ext/1799924136/vfd.o: /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/vfd.c  .generated_files/flags/default/c538964f425678b9c70ade7dc43f1c2a1fe88fe2 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/_ext/1799924136" 
+	@${RM} ${OBJECTDIR}/_ext/1799924136/vfd.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1799924136/vfd.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1799924136/vfd.o.d" -MT "${OBJECTDIR}/_ext/1799924136/vfd.o.d" -MT ${OBJECTDIR}/_ext/1799924136/vfd.o  -o ${OBJECTDIR}/_ext/1799924136/vfd.o /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/vfd.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/_ext/1799924136/main.o: /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/main.c  .generated_files/flags/default/9272cdbdc0d7beb759c1aaf371b590eaed6d7926 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/_ext/1799924136" 
@@ -128,6 +134,12 @@ ${OBJECTDIR}/_ext/1799924136/spi.o: /Users/roland/Projects/VFD-HCS-12SS59T/FW/sr
 	@${RM} ${OBJECTDIR}/_ext/1799924136/spi.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1799924136/spi.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1799924136/spi.o.d" -MT "${OBJECTDIR}/_ext/1799924136/spi.o.d" -MT ${OBJECTDIR}/_ext/1799924136/spi.o  -o ${OBJECTDIR}/_ext/1799924136/spi.o /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1799924136/vfd.o: /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/vfd.c  .generated_files/flags/default/f91823d8d04c92d089ce45cde707a4280c8fc3f0 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/_ext/1799924136" 
+	@${RM} ${OBJECTDIR}/_ext/1799924136/vfd.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1799924136/vfd.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1799924136/vfd.o.d" -MT "${OBJECTDIR}/_ext/1799924136/vfd.o.d" -MT ${OBJECTDIR}/_ext/1799924136/vfd.o  -o ${OBJECTDIR}/_ext/1799924136/vfd.o /Users/roland/Projects/VFD-HCS-12SS59T/FW/src/vfd.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 endif
 
