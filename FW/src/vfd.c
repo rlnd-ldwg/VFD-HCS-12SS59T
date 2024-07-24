@@ -28,25 +28,28 @@ char getCode(char c)
 
 void VFD_Init()
 {
-	SPI_Init();
-   
-    VFD_DDR |= (1 << VFD_RESET) | (1 << 1);
+  VFD_DDR |= (1 << VFD_RESET);
     VFD_PORT |= (1 << VFD_RESET);
+    
     // Reset VFD 
     VFD_PORT &= ~(1 << VFD_RESET);
     _delay_ms(1);
     VFD_PORT |= (1 << VFD_RESET);
 
-        SPI_SS_L();
+	SPI_Init();
+   
+    SPI_SS_L();
 
 	SPI_Send(NUMDIGIT | 12);		// number of digits
-        _delay_us(10);
+    _delay_us(10);
 	SPI_Send(DUTY | 4);					// brightness 1..15
-        _delay_us(10);
+    _delay_us(10);
 	SPI_Send(LIGHTS | LINORM);	
-        _delay_us(10);
-            SPI_SS_L();
-/* Hardwareseitig nich implemetiert 
+    _delay_us(10);
+    
+    SPI_SS_H();
+
+    /* Hardwareseitig nich implemetiert 
 	pinMode(Pin_VFD_VDON, OUTPUT);			// _VDON output
 	digitalWrite(Pin_VFD_VDON, HIGH);		// Vdisp OFF
 */
@@ -72,7 +75,7 @@ void VFD_Init()
 	display();
 }
 */
-void VFD_display(uint8_t* text)
+void VFD_Display(uint8_t* text)
 {
     uint8_t i = 0;
     

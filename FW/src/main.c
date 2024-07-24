@@ -32,36 +32,57 @@
     Main application
 */
 
+
 int main(void)
 {
-    /* Initializes MCU, drivers and middleware */
-VFD_Init();
-            VFD_DDR |= (1 << VFD_RESET) | (1 << 1);
-            VFD_PORT |= (1 << PORTB1);
-                   _delay_ms(500);
-                           
-        VFD_PORT &= ~(1 << PORTB1);
-        _delay_ms(500);
+    
         VFD_PORT |= (1 << PORTB1);
-        _delay_ms(500);
-                
-        VFD_PORT &= ~(1 << PORTB1);
-        _delay_ms(500);
-        VFD_PORT |= (1 << PORTB1);
-        _delay_ms(500);
-                
-        VFD_PORT &= ~(1 << PORTB1);
-        _delay_ms(500);
-        VFD_PORT |= (1 << PORTB1);
-        _delay_ms(500);
-                
-        VFD_PORT &= ~(1 << PORTB1);
-        _delay_ms(500);
-        VFD_PORT |= (1 << PORTB1);
-        _delay_ms(500);
-            
-VFD_display("Das ist Test");
+    VFD_PORT &= ~(1 << PORTB1);
+    _delay_ms(250);
+    VFD_PORT |= (1 << PORTB1);
+    _delay_ms(250);
+    VFD_PORT &= ~(1 << PORTB1);
+    _delay_ms(250);
+    VFD_PORT |= (1 << PORTB1);
+    _delay_ms(250);
 
+    VFD_PORT &= ~(1 << PORTB1);
+    _delay_ms(250);
+    VFD_PORT |= (1 << PORTB1);
+    _delay_ms(250);
+
+    VFD_PORT &= ~(1 << PORTB1);
+    _delay_ms(250);
+    VFD_PORT |= (1 << PORTB1);
+    _delay_ms(250);
+    
+    /* Initializes MCU, drivers and middleware */
+    VFD_Init();
+    /*
+    VFD_PORT |= (1 << PORTB1);
+    VFD_PORT &= ~(1 << PORTB1);
+    _delay_ms(250);
+    VFD_PORT |= (1 << PORTB1);
+    _delay_ms(250);
+    VFD_PORT &= ~(1 << PORTB1);
+    _delay_ms(250);
+    VFD_PORT |= (1 << PORTB1);
+    _delay_ms(250);
+
+    VFD_PORT &= ~(1 << PORTB1);
+    _delay_ms(250);
+    VFD_PORT |= (1 << PORTB1);
+    _delay_ms(250);
+
+    VFD_PORT &= ~(1 << PORTB1);
+    _delay_ms(250);
+    VFD_PORT |= (1 << PORTB1);
+    _delay_ms(250);
+    */
+    
+    VFD_Display("Das ist Test");
+    
+    VFD_PORT |= (1 << PORTB1);
     while (1){
         
         VFD_PORT &= ~(1 << PORTB1);

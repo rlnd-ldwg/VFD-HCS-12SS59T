@@ -28,6 +28,9 @@ extern "C" {
 #define LIOFF					0x01		// lights OFF
 #define LION					0x02		//    "   ON
     
+    void VFD_Init();
+    void VFD_Display(uint8_t* text);
+    
 #endif  /* VFD_H */
 
 #ifdef  __cplusplus

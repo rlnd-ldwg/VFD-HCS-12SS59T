@@ -104,23 +104,23 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/796674627/main.o: /home/roland/Projects/VFD-HCS-12SS59T/FW/src/main.c  .generated_files/flags/default/86b71476028f1fd03bc955453dc7c8ab75a619f6 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/_ext/796674627/main.o: /home/roland/Projects/VFD-HCS-12SS59T/FW/src/main.c  .generated_files/flags/default/a246fcd39276cc5058a89a45bfc5bbcef869c194 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/_ext/796674627" 
 	@${RM} ${OBJECTDIR}/_ext/796674627/main.o.d 
 	@${RM} ${OBJECTDIR}/_ext/796674627/main.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/796674627/main.o.d" -MT "${OBJECTDIR}/_ext/796674627/main.o.d" -MT ${OBJECTDIR}/_ext/796674627/main.o  -o ${OBJECTDIR}/_ext/796674627/main.o /home/roland/Projects/VFD-HCS-12SS59T/FW/src/main.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/796674627/main.o.d" -MT "${OBJECTDIR}/_ext/796674627/main.o.d" -MT ${OBJECTDIR}/_ext/796674627/main.o  -o ${OBJECTDIR}/_ext/796674627/main.o /home/roland/Projects/VFD-HCS-12SS59T/FW/src/main.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/_ext/796674627/spi.o: /home/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c  .generated_files/flags/default/fdd59c77cf45c17f90e6d68778228ffc02318892 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/_ext/796674627/spi.o: /home/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c  .generated_files/flags/default/88ffd7e426c199f3d86ae8589ca886066c253b04 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/_ext/796674627" 
 	@${RM} ${OBJECTDIR}/_ext/796674627/spi.o.d 
 	@${RM} ${OBJECTDIR}/_ext/796674627/spi.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/796674627/spi.o.d" -MT "${OBJECTDIR}/_ext/796674627/spi.o.d" -MT ${OBJECTDIR}/_ext/796674627/spi.o  -o ${OBJECTDIR}/_ext/796674627/spi.o /home/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/796674627/spi.o.d" -MT "${OBJECTDIR}/_ext/796674627/spi.o.d" -MT ${OBJECTDIR}/_ext/796674627/spi.o  -o ${OBJECTDIR}/_ext/796674627/spi.o /home/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/src/vfd.o: src/vfd.c  .generated_files/flags/default/589a5e2a34697ee4ae0d25a91fa955696144809b .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/vfd.o: src/vfd.c  .generated_files/flags/default/4f39354c0cd00f408ab4733b18675b30038d7218 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
 	@${RM} ${OBJECTDIR}/src/vfd.o.d 
 	@${RM} ${OBJECTDIR}/src/vfd.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/src/vfd.o.d" -MT "${OBJECTDIR}/src/vfd.o.d" -MT ${OBJECTDIR}/src/vfd.o  -o ${OBJECTDIR}/src/vfd.o src/vfd.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/src/vfd.o.d" -MT "${OBJECTDIR}/src/vfd.o.d" -MT ${OBJECTDIR}/src/vfd.o  -o ${OBJECTDIR}/src/vfd.o src/vfd.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 else
 ${OBJECTDIR}/_ext/796674627/main.o: /home/roland/Projects/VFD-HCS-12SS59T/FW/src/main.c  .generated_files/flags/default/beeefd27ac6f5d39edf100422a542b9385f04b75 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
@@ -154,7 +154,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 ${DISTDIR}/FW.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mmcu=atmega8 ${PACK_COMMON_OPTIONS}  -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2 -D__$(MP_PROCESSOR_OPTION)__  -Wl,-Map="${DISTDIR}/FW.${IMAGE_TYPE}.map"    -o ${DISTDIR}/FW.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}      -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1 -Wl,--gc-sections -Wl,--start-group  -Wl,-lm -Wl,--end-group 
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mmcu=atmega8 ${PACK_COMMON_OPTIONS}   -gdwarf-2 -D__$(MP_PROCESSOR_OPTION)__  -Wl,-Map="${DISTDIR}/FW.${IMAGE_TYPE}.map"    -o ${DISTDIR}/FW.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}      -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__ICD2RAM=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1 -Wl,--gc-sections -Wl,--start-group  -Wl,-lm -Wl,--end-group 
 	
 	
 	

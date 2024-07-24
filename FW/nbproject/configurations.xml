@@ -36,7 +36,7 @@
         <targetDevice>ATmega8</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>Simulator</platformTool>
+        <platformTool>snap</platformTool>
         <languageToolchain>AVR</languageToolchain>
         <languageToolchainVersion>7.3.0</languageToolchainVersion>
         <platform>2</platform>
