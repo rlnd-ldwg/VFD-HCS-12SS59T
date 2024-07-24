@@ -39,6 +39,7 @@ void VFD_Init()
 	SPI_Init();
    
     SPI_SS_L();
+    _delay_us(10);
 
 	SPI_Send(NUMDIGIT | 12);		// number of digits
     _delay_us(10);
@@ -46,7 +47,8 @@ void VFD_Init()
     _delay_us(10);
 	SPI_Send(LIGHTS | LINORM);	
     _delay_us(10);
-    
+  
+ 
     SPI_SS_H();
 
     /* Hardwareseitig nich implemetiert 
@@ -80,6 +82,7 @@ void VFD_Display(uint8_t* text)
     uint8_t i = 0;
     
     SPI_SS_L();
+    _delay_us(10);
 
     SPI_Send(DCRAM_WR | 0x00); // Adresse 0
     _delay_us(10);
@@ -88,6 +91,6 @@ void VFD_Display(uint8_t* text)
         SPI_Send(getCode(text[i++]));
             _delay_us(10);
     };
-    
+    _delay_us(10);
     SPI_SS_H();
 } 

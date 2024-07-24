@@ -36,7 +36,7 @@
 int main(void)
 {
     
-        VFD_PORT |= (1 << PORTB1);
+    VFD_DDR |= (1 << PORTB1);
     VFD_PORT &= ~(1 << PORTB1);
     _delay_ms(250);
     VFD_PORT |= (1 << PORTB1);
