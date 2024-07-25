@@ -38,6 +38,6 @@ sym-lib-table
 *-rescue.*
 
 # MPLAB
-/FW/build/
-/FW/dist/
-#/FW/.generated_files/
+FW/build/
+FW/dist/
+FW/.generated_files/
