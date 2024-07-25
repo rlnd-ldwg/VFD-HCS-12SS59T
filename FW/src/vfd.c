@@ -1,5 +1,5 @@
 /*
- * vfd v0.1.0
+ * vfd v0.2.0
  *
  * vfd interface functions
  *
@@ -46,7 +46,7 @@ char getCode(char c)
 
 void VFD_Init()
 {
-  VFD_DDR |= (1 << VFD_RESET);
+    VFD_DDR |= (1 << VFD_RESET);
     VFD_PORT |= (1 << VFD_RESET);
     
     // Reset VFD 
@@ -54,14 +54,15 @@ void VFD_Init()
     _delay_ms(1);
     VFD_PORT |= (1 << VFD_RESET);
 
-    SPI_Init();
+    // SPI enabled, LSB first, master mode, clock polarity, clock phase, F_osc/16
+    SPI_Init(( 1 << SPE ) | ( 1 << DORD ) | ( 1 << MSTR ) | (1 << CPOL) | ( 1 << CPHA) | ( 1 << SPR0 ));
    
     enable_slave(); // SPI_SS_L();
     _delay_us(10);
 
-    SPI_Send(NUMDIGIT | 12);        // number of digits
+    SPI_Send(NUMDIGIT | 12);    // number of digits
     _delay_us(10);
-    SPI_Send(DUTY | 4);                 // brightness 1..15
+    SPI_Send(DUTY | 4);         // brightness 1..15
     _delay_us(10);
     SPI_Send(LIGHTS | LINORM);  
     _delay_us(10);
@@ -69,32 +70,13 @@ void VFD_Init()
  
     disable_slave();    // SPI_SS_H();
 
-    /* Hardwareseitig nich implemetiert 
+/* not implemente 
     pinMode(Pin_VFD_VDON, OUTPUT);          // _VDON output
     digitalWrite(Pin_VFD_VDON, HIGH);       // Vdisp OFF
 */
-    
-/* interner Puffer für Text     for(int16_t i=0; i<NUMDIGITS; i++)      // preset display buffer
-        buf[i] = 0xff;                      // with unused char
 
-    buf[NUMDIGITS] = '\0';                  // terminate buffer
-*/
-}
+} // VFD_Init
 
-/*void VFD::write(char* text)
-{
-    scrLen = strlen(text);
-    scrPos = NUMDIGITS-1;
-
-    if(scrLen > BUFSIZE-1){
-        scrLen = BUFSIZE-1;
-        text[scrLen] = '\0';
-    }
-
-    strcpy(buf, text);
-    display();
-}
-*/
 void VFD_Display(uint8_t* text)
 {
     uint8_t i = 0;
@@ -102,13 +84,14 @@ void VFD_Display(uint8_t* text)
     enable_slave(); // SPI_SS_L();
     _delay_us(10);
 
-    SPI_Send(DCRAM_WR | 0x00); // Adresse 0
+    SPI_Send(DCRAM_WR | 0x00); // Address 0
     _delay_us(10);
 
     while (text[i]) {
         SPI_Send(getCode(text[i++]));
             _delay_us(10);
     };
+    
     _delay_us(10);
     disable_slave();    // SPI_SS_H();
-} 
+} // VFD_Display

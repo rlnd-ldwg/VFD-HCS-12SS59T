@@ -1,14 +1,7 @@
-/* 
- * File:   spi.h
- * Author: roland
- *
- * Created on July 20, 2024, 6:46 PM
- */
-
 /*
- * spi v0.1.0
+ * spi v0.2.0
  *
- * header file: hardware interface
+ * header file: spi interface
  *
  * (c) July 2024 by Roland Ludwig
  * 
