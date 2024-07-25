@@ -1,29 +1,47 @@
-/* 
- * File:   vfd.c
- * Author: roland
+/*
+ * vfd v0.1.0
  *
- * Created on July 22, 2024, 6:46 PM
+ * vfd interface functions
+ *
+ * (c) Juli 2024 by Roland Ludwig
+ *
+ *  * 2024/07/222 ????
+ * 
+ * SPI_Init
+ * SPI_Send
+ * GALprogOff
+ * SetSecurityBit
+ * Bulkerase
+ * GALreadRow
+ * GALwriteRow
+ * ReadGAL
+ * ProgGAL
+ * VerifyGAL
+ * writeEPROMdata: 2023/09/04 initial Version
+ * readEPROMdata
+ *  *
  */
 
 #define F_CPU 12000000
 
 #include <util/delay.h>
+
 #include "../include/vfd.h"
 #include "../include/spi.h"
 
 
 char getCode(char c)
 {
-	if(c>='@' && c<='_')				// 64.. -> 16..
-		c -= 48;
-	else if(c>=' ' && c<='?')			// 32.. -> 48..
-		c += 16;
-	else if(c>='a' && c<='z')			// 97.. -> 17..
-		c -= 80;
-	else								// unvalid -> ?
-		c = 79;
+    if(c>='@' && c<='_')                // 64.. -> 16..
+        c -= 48;
+    else if(c>=' ' && c<='?')           // 32.. -> 48..
+        c += 16;
+    else if(c>='a' && c<='z')           // 97.. -> 17..
+        c -= 80;
+    else                                // unvalid -> ?
+        c = 79;
 
-	return c;
+    return c;
 }
 
 void VFD_Init()
@@ -36,52 +54,52 @@ void VFD_Init()
     _delay_ms(1);
     VFD_PORT |= (1 << VFD_RESET);
 
-	SPI_Init();
+    SPI_Init();
    
-    SPI_SS_L();
+    enable_slave(); // SPI_SS_L();
     _delay_us(10);
 
-	SPI_Send(NUMDIGIT | 12);		// number of digits
+    SPI_Send(NUMDIGIT | 12);        // number of digits
     _delay_us(10);
-	SPI_Send(DUTY | 4);					// brightness 1..15
+    SPI_Send(DUTY | 4);                 // brightness 1..15
     _delay_us(10);
-	SPI_Send(LIGHTS | LINORM);	
+    SPI_Send(LIGHTS | LINORM);  
     _delay_us(10);
   
  
-    SPI_SS_H();
+    disable_slave();    // SPI_SS_H();
 
     /* Hardwareseitig nich implemetiert 
-	pinMode(Pin_VFD_VDON, OUTPUT);			// _VDON output
-	digitalWrite(Pin_VFD_VDON, HIGH);		// Vdisp OFF
+    pinMode(Pin_VFD_VDON, OUTPUT);          // _VDON output
+    digitalWrite(Pin_VFD_VDON, HIGH);       // Vdisp OFF
 */
     
-/* interner Puffer für Text 	for(int16_t i=0; i<NUMDIGITS; i++)		// preset display buffer
-		buf[i] = 0xff;						// with unused char
+/* interner Puffer für Text     for(int16_t i=0; i<NUMDIGITS; i++)      // preset display buffer
+        buf[i] = 0xff;                      // with unused char
 
-	buf[NUMDIGITS] = '\0';					// terminate buffer
+    buf[NUMDIGITS] = '\0';                  // terminate buffer
 */
 }
 
 /*void VFD::write(char* text)
 {
-	scrLen = strlen(text);
-	scrPos = NUMDIGITS-1;
+    scrLen = strlen(text);
+    scrPos = NUMDIGITS-1;
 
-	if(scrLen > BUFSIZE-1){
-		scrLen = BUFSIZE-1;
-		text[scrLen] = '\0';
-	}
+    if(scrLen > BUFSIZE-1){
+        scrLen = BUFSIZE-1;
+        text[scrLen] = '\0';
+    }
 
-	strcpy(buf, text);
-	display();
+    strcpy(buf, text);
+    display();
 }
 */
 void VFD_Display(uint8_t* text)
 {
     uint8_t i = 0;
     
-    SPI_SS_L();
+    enable_slave(); // SPI_SS_L();
     _delay_us(10);
 
     SPI_Send(DCRAM_WR | 0x00); // Adresse 0
@@ -92,5 +110,5 @@ void VFD_Display(uint8_t* text)
             _delay_us(10);
     };
     _delay_us(10);
-    SPI_SS_H();
+    disable_slave();    // SPI_SS_H();
 } 

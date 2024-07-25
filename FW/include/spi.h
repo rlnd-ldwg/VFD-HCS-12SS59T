@@ -6,19 +6,15 @@
  */
 
 /*
- * hwif v1.1.0
+ * spi v0.1.0
  *
  * header file: hardware interface
  *
- * (c) February 2023 by Roland Ludwig
+ * (c) July 2024 by Roland Ludwig
  * 
- * 2023/09/04 added functions for EPROMmer
+ * 2024/07/23 ???
  *
  */
-/*
-#ifndef HWIF_H
-#define HWIF_H
-*/
 
 #ifdef  __cplusplus
 extern "C" {
@@ -38,36 +34,23 @@ extern "C" {
 #define SCK         PORTB5
 #define SS          PORTB2
 
-/*
-#define SPI_SPCR    SPCR
-#define SPI_SPDR    SPDR
-#define SPI_SPSR    SPSR
-#define SPI_SPIF    SPIF
-#define SPI_SPE     SPE
-#define SPI_MSTR    MSTR
-#define SPI_SPR0    SPR0
-#define SPI_SPR1    SPR1
-*/
+#define spi_wait()  while (!(SPSR & (1 << SPIF)));  // wait for SPI tramsmission completed
+#define enable_slave()  SPI_PORT &= ~(1 << SS);     // enable slave
+#define disable_slave() SPI_PORT |= (1 << SS);      // disable slave
 
-// Loop until any current SPI transmissions have completed
-#define spi_wait()  while (!(SPSR & (1 << SPIF)));
-#define en_slave    SPI_PORT &= ~(1 << SS);
-#define dis_slave   SPI_PORT |= (1 << SS);
-
-// Initialize the SPI subsystem
 void SPI_Init();
 
-// Transfer a byte of data
 uint8_t SPI_Send( uint8_t data );
 
-// Read a byte of data
 uint8_t SPI_Read( void );
 
-// Assert the SS line
+/* replaced by macros 
+ // Assert the SS line
 void SPI_SS_L( void );
 
 // Deassert the SS line
 void SPI_SS_H( void );
+*/
 
 #endif  /* SPI_H */
 

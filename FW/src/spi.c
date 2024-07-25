@@ -1,4 +1,3 @@
-// SPI master routines were pulled from the Atmel ATMega168 datasheet.
 /*
  * spi v0.1.0
  *
@@ -27,8 +26,6 @@
     #include "../include/spi.h"
 #endif
 
-// Initialize the SPI as master
-
 void SPI_Init()
 {
     SPI_DDR |= ( 1 << MOSI ) | ( 1 << SCK ) | ( 1 << SS );  // set MOSI, SCK, and SS pins as output
@@ -40,8 +37,9 @@ void SPI_Init()
     SPCR = ( 1 << MSTR );       // set AVR as master
     
     // SPCR : SPIE SPE DORD MSTR CPOL CPHA SPR1 SPR0 SPCR, InitialValue 0xb00000000
-    // set up the SPI module: SPI enabled, LSB first, master mode, clock polarity and phase = 0, F_osc/16
+    // SPI parameter: SPI enabled, LSB first, master mode, clock polarity and phase = mode = 3, F_osc/16
     SPCR |= ( 1 << SPE ) | ( 1 << DORD ) | ( 1 << MSTR ) | (1 << CPOL) | ( 1 << CPHA) | ( 1 << SPR0 );
+    
     // SPSR = 1;     // set double SPI speed for F_osc/2 -> 2 MHz
 }
 
@@ -54,13 +52,13 @@ uint8_t SPI_Send( uint8_t data )
 
 uint8_t SPI_Read( void )
 {
-
     SPDR = 0xFF;    // Start dummy transmission to get a result from slave
     spi_wait();
     return SPDR;
 }
 
-// Enable slave
+/* replaced by macros
+ * // Enable slave
 void SPI_SS_L()
 {
     SPI_PORT &= ~(1 << SS);
@@ -71,3 +69,4 @@ void SPI_SS_H()
 {
     SPI_PORT |= (1 << SS);
 }
+*/

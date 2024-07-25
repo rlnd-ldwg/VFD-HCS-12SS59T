@@ -116,7 +116,7 @@ ${OBJECTDIR}/_ext/796674627/spi.o: /home/roland/Projects/VFD-HCS-12SS59T/FW/src/
 	@${RM} ${OBJECTDIR}/_ext/796674627/spi.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/796674627/spi.o.d" -MT "${OBJECTDIR}/_ext/796674627/spi.o.d" -MT ${OBJECTDIR}/_ext/796674627/spi.o  -o ${OBJECTDIR}/_ext/796674627/spi.o /home/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/src/vfd.o: src/vfd.c  .generated_files/flags/default/4f39354c0cd00f408ab4733b18675b30038d7218 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/vfd.o: src/vfd.c  .generated_files/flags/default/3ade013060cd866521ac582d2fdb14bd6c162dd0 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
 	@${RM} ${OBJECTDIR}/src/vfd.o.d 
 	@${RM} ${OBJECTDIR}/src/vfd.o 
@@ -135,7 +135,7 @@ ${OBJECTDIR}/_ext/796674627/spi.o: /home/roland/Projects/VFD-HCS-12SS59T/FW/src/
 	@${RM} ${OBJECTDIR}/_ext/796674627/spi.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/796674627/spi.o.d" -MT "${OBJECTDIR}/_ext/796674627/spi.o.d" -MT ${OBJECTDIR}/_ext/796674627/spi.o  -o ${OBJECTDIR}/_ext/796674627/spi.o /home/roland/Projects/VFD-HCS-12SS59T/FW/src/spi.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/src/vfd.o: src/vfd.c  .generated_files/flags/default/415e922a77bab8a3c1f2b10f0351d5619fd5f734 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/vfd.o: src/vfd.c  .generated_files/flags/default/df8fb9d91ebbc7f9bb28c38d6fb8110d975d83a1 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
 	@${RM} ${OBJECTDIR}/src/vfd.o.d 
 	@${RM} ${OBJECTDIR}/src/vfd.o 
